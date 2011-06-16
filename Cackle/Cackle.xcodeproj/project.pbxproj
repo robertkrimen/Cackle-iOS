@@ -35,6 +35,8 @@
 		D4264B9B13AAA35800477EE3 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D4264B9513AAA35800477EE3 /* DDLog.m */; };
 		D4264B9C13AAA35800477EE3 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = D4264B9713AAA35800477EE3 /* DDTTYLogger.m */; };
 		D4264BA013AAA37C00477EE3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4264B9F13AAA37C00477EE3 /* CFNetwork.framework */; };
+		D4264BA813AAA48700477EE3 /* CackleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4264BA713AAA48700477EE3 /* CackleRequest.m */; };
+		D4264BAB13AAA49500477EE3 /* CackleResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D4264BAA13AAA49500477EE3 /* CackleResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,10 @@
 		D4264B9613AAA35800477EE3 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
 		D4264B9713AAA35800477EE3 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
 		D4264B9F13AAA37C00477EE3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D4264BA613AAA48700477EE3 /* CackleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CackleRequest.h; sourceTree = "<group>"; };
+		D4264BA713AAA48700477EE3 /* CackleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CackleRequest.m; sourceTree = "<group>"; };
+		D4264BA913AAA49500477EE3 /* CackleResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CackleResponse.h; sourceTree = "<group>"; };
+		D4264BAA13AAA49500477EE3 /* CackleResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CackleResponse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D4264BA513AAA45A00477EE3 /* Cackle */,
 				D4264B3D13AAA1C000477EE3 /* cocoahttpserver */,
 				1D3623240D0F684500981E51 /* CackleAppDelegate.h */,
 				1D3623250D0F684500981E51 /* CackleAppDelegate.m */,
@@ -218,6 +225,17 @@
 			name = cocoahttpserver;
 			sourceTree = "<group>";
 		};
+		D4264BA513AAA45A00477EE3 /* Cackle */ = {
+			isa = PBXGroup;
+			children = (
+				D4264BA613AAA48700477EE3 /* CackleRequest.h */,
+				D4264BA713AAA48700477EE3 /* CackleRequest.m */,
+				D4264BA913AAA49500477EE3 /* CackleResponse.h */,
+				D4264BAA13AAA49500477EE3 /* CackleResponse.m */,
+			);
+			name = Cackle;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -301,6 +319,8 @@
 				D4264B9A13AAA35800477EE3 /* DDFileLogger.m in Sources */,
 				D4264B9B13AAA35800477EE3 /* DDLog.m in Sources */,
 				D4264B9C13AAA35800477EE3 /* DDTTYLogger.m in Sources */,
+				D4264BA813AAA48700477EE3 /* CackleRequest.m in Sources */,
+				D4264BAB13AAA49500477EE3 /* CackleResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
