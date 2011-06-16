@@ -37,6 +37,8 @@
 		D4264BA013AAA37C00477EE3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4264B9F13AAA37C00477EE3 /* CFNetwork.framework */; };
 		D4264BA813AAA48700477EE3 /* CackleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4264BA713AAA48700477EE3 /* CackleRequest.m */; };
 		D4264BAB13AAA49500477EE3 /* CackleResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D4264BAA13AAA49500477EE3 /* CackleResponse.m */; };
+		D4264BB313AABDD100477EE3 /* CackleServer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4264BB213AABDD100477EE3 /* CackleServer.m */; };
+		D4264BB613AABDDB00477EE3 /* CackleConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D4264BB513AABDDB00477EE3 /* CackleConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +100,10 @@
 		D4264BA713AAA48700477EE3 /* CackleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CackleRequest.m; sourceTree = "<group>"; };
 		D4264BA913AAA49500477EE3 /* CackleResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CackleResponse.h; sourceTree = "<group>"; };
 		D4264BAA13AAA49500477EE3 /* CackleResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CackleResponse.m; sourceTree = "<group>"; };
+		D4264BB113AABDD100477EE3 /* CackleServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CackleServer.h; sourceTree = "<group>"; };
+		D4264BB213AABDD100477EE3 /* CackleServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CackleServer.m; sourceTree = "<group>"; };
+		D4264BB413AABDDB00477EE3 /* CackleConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CackleConnection.h; sourceTree = "<group>"; };
+		D4264BB513AABDDB00477EE3 /* CackleConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CackleConnection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +238,10 @@
 				D4264BA713AAA48700477EE3 /* CackleRequest.m */,
 				D4264BA913AAA49500477EE3 /* CackleResponse.h */,
 				D4264BAA13AAA49500477EE3 /* CackleResponse.m */,
+				D4264BB113AABDD100477EE3 /* CackleServer.h */,
+				D4264BB213AABDD100477EE3 /* CackleServer.m */,
+				D4264BB413AABDDB00477EE3 /* CackleConnection.h */,
+				D4264BB513AABDDB00477EE3 /* CackleConnection.m */,
 			);
 			name = Cackle;
 			sourceTree = "<group>";
@@ -321,6 +331,8 @@
 				D4264B9C13AAA35800477EE3 /* DDTTYLogger.m in Sources */,
 				D4264BA813AAA48700477EE3 /* CackleRequest.m in Sources */,
 				D4264BAB13AAA49500477EE3 /* CackleResponse.m in Sources */,
+				D4264BB313AABDD100477EE3 /* CackleServer.m in Sources */,
+				D4264BB613AABDDB00477EE3 /* CackleConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
