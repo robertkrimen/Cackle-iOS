@@ -10,6 +10,7 @@
 #import "CackleViewController.h"
 
 #import "CackleServer.h"
+#import "CackleConnection.h"
 #import "DDLog.h"
 #import "DDTTYLogger.h"
 
@@ -41,7 +42,9 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 	// Technologies like Bonjour allow clients to dynamically discover the server's port at runtime.
 	// However, for easy testing you may want force a certain port so you can just hit the refresh button.
 	[httpServer setPort:12345];
-	//[httpServer setConnectionClass:[~ class]];
+	[httpServer setConnectionClass:[CackleConnection class]];
+    httpServer.runBlock = ^(CackleRequest *request){
+    };
 	
 	NSError *error;
 	if(![httpServer start:&error]) {

@@ -7,10 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HTTPConnection.h"
+#import "CackleRequest.h"
 
+@interface CackleConnection : HTTPConnection {
 
-@interface CackleConnection : NSObject {
-
+    NSObject<HTTPResponse> *response_;
 }
+
+@property (nonatomic, retain) NSObject<HTTPResponse> *response;
+
+- (void) run:( CackleRequest* )request;
+- (void) respond:( NSInteger )status;
+- (void) respond:( NSInteger )status withString:( NSString* )string;
 
 @end

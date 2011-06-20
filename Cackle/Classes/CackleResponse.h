@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HTTPDataResponse.h"
 
-
-@interface CackleResponse : NSObject {
+@interface CackleResponse : HTTPDataResponse {
 
     NSInteger status;
 

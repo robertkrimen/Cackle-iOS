@@ -8,7 +8,52 @@
 
 #import "CackleConnection.h"
 
+#import "HTTPMessage.h"
+#import "HTTPDataResponse.h"
+#import "DDNumber.h"
+#import "HTTPLogging.h"
+#import "CackleRequest.h"
+#import "CackleResponse.h"
+
+static const int httpLogLevel = HTTP_LOG_LEVEL_WARN; // | HTTP_LOG_FLAG_TRACE;
 
 @implementation CackleConnection
 
+@synthesize response = response_;
+
+- (void) respond:( NSInteger )status {
+    CackleResponse *response = [[[CackleResponse alloc] init] autorelease];
+    response.status = status;
+    self.response = response;
+}
+
+- (void) respond:( NSInteger )status withString:( NSString* )string {
+    CackleResponse *response = [[[CackleResponse alloc] initWithData:[string dataUsingEncoding:NSUTF8StringEncoding]] autorelease];
+    response.status = status;
+    self.response = response;
+}
+
+- (void) run:( CackleRequest* )request_ {
+
+    //if ( [[self class] getRun] != nil ) {
+    //    [[self class] getRun](request_, self);
+    //}
+    [self respond:200 withString:@"Hello, World!"];
+}
+
+- (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path {
+	HTTPLogTrace();
+	
+    CackleRequest *request_ = [[[CackleRequest alloc] init] autorelease];
+    request_.method = method;
+    request_.path = path;
+
+    [self run:request_];
+
+    if ( self.response != nil ) {
+        return self.response;
+    }
+	
+	return [super httpResponseForMethod:method URI:path];
+}
 @end

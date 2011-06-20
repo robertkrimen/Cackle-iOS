@@ -8,9 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "HTTPServer.h"
+#import "CackleRequest.h"
+
+typedef void (^CackleRequestRunBlock)(CackleRequest*);
 
 @interface CackleServer : HTTPServer {
 
+    CackleRequestRunBlock runBlock;
+
 }
+
+@property (nonatomic, copy) CackleRequestRunBlock runBlock;
 
 @end

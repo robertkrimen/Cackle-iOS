@@ -11,4 +11,6 @@
 
 @implementation CackleServer
 
+@synthesize runBlock;
+
 @end

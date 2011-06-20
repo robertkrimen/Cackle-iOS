@@ -11,4 +11,6 @@
 
 @implementation CackleResponse
 
+@synthesize status;
+
 @end
