@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HTTPServer.h"
 
-
-@interface CackleServer : NSObject {
+@interface CackleServer : HTTPServer {
 
 }
 

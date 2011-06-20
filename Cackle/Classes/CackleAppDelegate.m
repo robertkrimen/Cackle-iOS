@@ -9,11 +9,17 @@
 #import "CackleAppDelegate.h"
 #import "CackleViewController.h"
 
+#import "CackleServer.h"
+#import "DDLog.h"
+#import "DDTTYLogger.h"
+
 @implementation CackleAppDelegate
 
 @synthesize window;
 @synthesize viewController;
 
+CackleServer *httpServer;
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -21,6 +27,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after app launch.
+
+	[DDLog addLogger:[DDTTYLogger sharedInstance]];
+	
+	// Create server using our custom MyHTTPServer class
+	httpServer = [[CackleServer alloc] init];
+	
+	// Tell the server to broadcast its presence via Bonjour.
+	// This allows browsers such as Safari to automatically discover our service.
+	[httpServer setType:@"_http._tcp."];
+	
+	// Normally there's no need to run our server on any specific port.
+	// Technologies like Bonjour allow clients to dynamically discover the server's port at runtime.
+	// However, for easy testing you may want force a certain port so you can just hit the refresh button.
+	[httpServer setPort:12345];
+	//[httpServer setConnectionClass:[~ class]];
+	
+	NSError *error;
+	if(![httpServer start:&error]) {
+		DDLogError(@"Error starting HTTP Server: %@", error);
+	}
+
 	
 	// Set the view controller as the window's root view controller and display.
     self.window.rootViewController = self.viewController;
