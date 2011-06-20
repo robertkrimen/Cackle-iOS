@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "HTTPServer.h"
 #import "CackleRequest.h"
+#import "CackleConnection.h"
 
-typedef void (^CackleRequestRunBlock)(CackleRequest*);
+typedef void (^CackleRequestRunBlock)(CackleRequest*, CackleConnection*);
 
 @interface CackleServer : HTTPServer {
 

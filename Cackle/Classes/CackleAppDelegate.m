@@ -43,7 +43,8 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 	// However, for easy testing you may want force a certain port so you can just hit the refresh button.
 	[httpServer setPort:12345];
 	[httpServer setConnectionClass:[CackleConnection class]];
-    httpServer.runBlock = ^(CackleRequest *request){
+    httpServer.runBlock = ^(CackleRequest *request, CackleConnection *connection){
+        [connection respond:200 withString:@"Hello, World!"];
     };
 	
 	NSError *error;

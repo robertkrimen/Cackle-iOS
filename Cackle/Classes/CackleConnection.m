@@ -14,6 +14,7 @@
 #import "HTTPLogging.h"
 #import "CackleRequest.h"
 #import "CackleResponse.h"
+#import "CackleServer.h"
 
 static const int httpLogLevel = HTTP_LOG_LEVEL_WARN; // | HTTP_LOG_FLAG_TRACE;
 
@@ -35,10 +36,10 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_WARN; // | HTTP_LOG_FLAG_TRACE;
 
 - (void) run:( CackleRequest* )request_ {
 
-    //if ( [[self class] getRun] != nil ) {
-    //    [[self class] getRun](request_, self);
-    //}
-    [self respond:200 withString:@"Hello, World!"];
+    CackleRequestRunBlock runBlock = [(CackleServer *) config.server runBlock];
+    if ( runBlock != nil ) {
+        runBlock(request_, self);
+    }
 }
 
 - (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path {
