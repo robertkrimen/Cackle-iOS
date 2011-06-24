@@ -38,7 +38,7 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_WARN; // | HTTP_LOG_FLAG_TRACE;
 
     CackleRequestRunBlock runBlock = [(CackleServer *) config.server runBlock];
     if ( runBlock != nil ) {
-        runBlock(request_, self);
+        runBlock(request_);
     }
 }
 
@@ -48,6 +48,7 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_WARN; // | HTTP_LOG_FLAG_TRACE;
     CackleRequest *request_ = [[[CackleRequest alloc] init] autorelease];
     request_.method = method;
     request_.path = path;
+    request_.connection = self;
 
     [self run:request_];
 

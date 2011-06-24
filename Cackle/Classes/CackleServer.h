@@ -11,7 +11,7 @@
 #import "CackleRequest.h"
 #import "CackleConnection.h"
 
-typedef void (^CackleRequestRunBlock)(CackleRequest*, CackleConnection*);
+typedef void (^CackleRequestRunBlock)(CackleRequest*);
 
 @interface CackleServer : HTTPServer {
 

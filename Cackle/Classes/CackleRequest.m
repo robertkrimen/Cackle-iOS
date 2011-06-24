@@ -13,5 +13,14 @@
 
 @synthesize method;
 @synthesize path;
+@synthesize connection;
+
+- (void) respond:( NSInteger )status {
+    [connection respond:status];
+}
+
+- (void) respond:( NSInteger )status withString:( NSString* )string {
+    [connection respond:status withString:string];
+}
 
 @end
