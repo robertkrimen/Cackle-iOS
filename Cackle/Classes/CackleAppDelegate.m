@@ -42,7 +42,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 	// Technologies like Bonjour allow clients to dynamically discover the server's port at runtime.
 	// However, for easy testing you may want force a certain port so you can just hit the refresh button.
 	[httpServer setPort:12345];
-	[httpServer setConnectionClass:[CackleConnection class]];
     httpServer.runBlock = ^(CackleRequest *request){
         [request respond:200 withString:@"Hello, World!"];
     };

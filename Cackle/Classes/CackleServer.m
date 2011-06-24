@@ -8,9 +8,17 @@
 
 #import "CackleServer.h"
 
+@class CackleConnection;
 
 @implementation CackleServer
 
 @synthesize runBlock;
+
+- (id)init {
+	if ((self = [super init])) {
+		connectionClass = [CackleConnection self];
+    }
+    return self;
+}
 
 @end
